@@ -1,0 +1,644 @@
+// #ff0032
+$red: #dc143b;
+$black: #111111;
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    color: white;
+    overflow-x: hidden;
+    // background-color: black;
+}
+
+/* -----------------------------global change----------------------------- */
+a{
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+}
+button{
+    border: none;
+}
+button:focus{
+    outline: none;
+}
+/* -----------------------------global change----------------------------- */
+
+
+/* -----------------------------Nav Bar---------------------------- */
+nav{
+    z-index: 50;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem 0rem;
+    transition: 0.25s;
+    h3 > a{
+        font-family: "Montserrat", sans-serif;
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: 0.7px;
+        color: white;
+        span{
+            color: $red;
+            transition: 0.25s;
+            text-decoration: underline solid $red;
+        }
+        span.shrink{
+            color: white;
+            text-decoration: underline solid white;
+        }
+    }
+    ul{
+        width: 60%;
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0.5rem 1rem;
+    }
+}
+nav.shrink{
+    padding: 0rem;
+    // background-color: #0f0f0f;
+    background-color: $red;
+    .navNames:hover{
+        color: rgb(207, 206, 206);
+    }
+}
+.navIcons,
+.navNames{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+    color: white;
+    transition: all 0.25s ease;
+}
+.navNames:hover{
+    background-color: rgb(243, 12, 12);
+    background-color: #dc143b;
+}
+.navNames.clicked{
+    background-color: #dc143b;
+}
+.navIcons{
+    display: none;
+}
+/* -----------------------------Nav Bar---------------------------- */
+
+
+/* -----------------------------Slider section----------------------------- */
+.infoSection{
+    z-index: 1;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../images/background/bg.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+.infoOver{
+    z-index: 2;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.336);
+}
+.sliderDiv{
+    z-index: 3;
+    width: 100vw;
+    position: relative;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    justify-content: space-between;
+    color: rgba(255, 255, 255, 0.87);
+    a{
+        font-weight: 600;
+        font-size: 14px;
+        padding: 0.6rem 1.2rem;
+        border: 2.5px solid $red;
+        border-radius: 0.3rem;
+        color: $red;
+        transition: all 0.2s ease-in;
+    }
+    a:hover{
+        color: rgba(255, 255, 255, 0.911);
+        border-color: #ec234cb9;
+        background-color: $red;
+    }
+}
+.slider{
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.9rem;
+    font-weight: 600;
+    padding-bottom: 0.5rem;
+    letter-spacing: 0.8px;
+    
+    span{
+        opacity: 0;
+        transition: all 0.2s ease;
+    }
+    span.fade{
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+}
+#nonSlider{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    padding-bottom: 1.2rem;
+    text-align: center;
+    span{
+        color: $red;
+    }
+}
+/* -----------------------------Slider section----------------------------- */
+
+
+/* -----------------------------category section----------------------------- */
+.category{
+    width: 100vw;
+    background: white;
+    background-image: url("../images/background/cate.jpg");
+    .categoryBody{
+        width: 100vw;
+        padding-top: 3rem;
+        padding-bottom: 7rem;
+        background-color: rgba(255, 247, 247, 0.075);
+    }
+}
+.catagoryHead{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5rem;
+    overflow: hidden;
+    h3{
+        font-family: "Montserrat", sans-serif;
+        font-size: 28px;
+        color: black;
+        line-height: 3rem;
+    }
+    h5{
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        color: $red;
+        text-transform: lowercase;
+        div{
+            width: 2rem;
+            height: 5px;
+            background-color: black;
+            border: 2px solid black;
+            margin: 0rem 0.2rem;
+            border-radius: 0.25rem;
+        }
+    }
+}
+.categoryBody{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h3{
+        font-family: "Montserrat", sans-serif;
+        font-size: 28px;
+        color: black;
+    }
+    .cards{
+        width: 100%;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 340px));
+        grid-gap: 3%;
+        // padding-bottom: 7rem;
+    }
+}
+.card1,
+.card2,
+.card3{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0rem;
+    border-radius: 7px;
+    overflow: hidden;
+    box-shadow: 2px 3px 5px 0 #222;
+    h5,a{
+        padding: 0.5rem 0rem;
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase; 
+        z-index: 2;
+    }
+    h5{
+        font-size: 18px;
+        color: #ff0033;
+    }
+    .cardBody{
+        font-weight: 300;
+        font-size: 16px;
+        text-transform: unset;
+        color: white;
+    }
+    a{
+        font-size: 12px;
+        font-weight: 500;
+        border: 2px solid $red;
+        border-radius: 0.5rem;
+        padding: 0.5rem 1rem;
+        color: red;
+        background-color: rgba(34, 34, 34, 0.685);
+        transition: all 0.25s ease;
+    }
+    a:hover{
+        color: white;
+        background-color: $red;
+    }
+    .hoverDiv{
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 0%;
+        height: 100%;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.075);
+        transition: all 0.2s ease-out;
+    }
+}
+
+.card.hover{
+    .hoverDiv{
+        width: 100%;
+    }
+}
+.card1{
+    background-image: url("../images/background/c1.jpg");
+}
+.card2{
+    background-image: url("../images/background/c2.jpg");
+}
+.card3{
+    background-image: url("../images/background/c3.jpg");
+}
+/* -----------------------------category section----------------------------- */
+
+
+/* -----------------------------popularBike section----------------------------- */
+.popularBike{
+    width: 100vw;
+    background-color: black;
+    .popularBikeBody{
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 3rem;
+        padding-bottom: 7rem;
+        min-height: fit-content;
+    }
+}
+.popularBikeHead{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5rem;
+    overflow: hidden;
+    h3{
+        font-family: "Montserrat", sans-serif;
+        font-size: 28px;
+        color: white;
+        line-height: 3rem;
+    }
+    h5{
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        color: $red;
+        text-transform: lowercase;
+        div{
+            width: 2rem;
+            height: 5px;
+            background-color: white;
+            border: 2px solid white;
+            margin: 0rem 0.2rem;
+            border-radius: 0.25rem;
+        }
+    }
+}
+.popularBikeSlider{
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 21rem));
+    grid-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+    // padding: 0rem 0.4rem;
+}
+.cycle{
+    width: 21rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1rem;
+    img{
+        padding: 10px;
+        max-width: 20rem;
+    }
+    .cycleContent{
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 9rem);
+        align-items: center;
+        justify-content: space-between;
+        h5{
+            font-family: "Montserrat", sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            text-transform: uppercase;
+            color: black;
+            .cycleContentRate{
+                font-weight: 400;
+            }
+        }
+        a{
+            width: 9rem;
+            font-size: 14px;
+            font-weight: 600;
+            border: 2.5px solid $red;
+            padding: 0.5rem 1rem;
+            border-radius: 0.4rem;
+            color: $red;
+            transition: all 0.25s ease-in;
+        }
+        a:hover{
+            background-color: $red;
+            color: white;
+        }
+    }
+}
+/* -----------------------------popularBike section----------------------------- */
+
+
+/* -----------------------------contact section----------------------------- */
+.contact{
+    width: 100vw;
+    min-height: fit-content;
+    background-image: url("../images/background/contact.jpg");
+    .contactBody{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        min-height: fit-content;
+        background-color: rgba(255, 250, 250, 0.205);
+        padding-top: 3rem;
+        padding-bottom: 7rem;
+    }
+}
+.contactHead{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 3rem;
+    overflow: hidden;
+    h3{
+        font-family: "Montserrat", sans-serif;
+        font-size: 28px;
+        color: black;
+        line-height: 3rem;
+    }
+    h5{
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $red;
+        text-transform: lowercase;
+        div{
+            width: 2rem;
+            height: 5px;
+            background-color: black;
+            border: 2px solid black;
+            margin: 0rem 0.2rem;
+            border-radius: 0.25rem;
+        }
+    }
+}
+.contactBody{
+    form{
+        width: 40vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        //margin top for email and message.
+        >input[type=text],
+        >input[type=submit],
+        >textarea{
+            margin-top: 1rem;
+        }
+
+        // width of the all form components.
+        .names,
+        >input[type=text],
+        >input[type=submit],
+        >textarea{
+            width: 100%;
+        }
+
+        // alignment of the name class and the input components.
+        .names{
+            display: flex;
+            justify-content: space-between;
+            >input[type=text]{
+                width: 48%;
+            }
+        }
+        
+        // common changes in form components.
+        input[type=text],
+        input[type=submit],
+        textarea{
+            font-family: "Montserrat", sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            padding: 0.7rem 0.8rem;
+            border-radius: 0.5rem;
+            border: 1.6px solid rgba(128, 128, 128, 0.493);
+            color: rgba(26, 26, 26, 0.87);
+        }
+        input[type=text]:focus,
+        input[type=submit]:focus,
+        textarea:focus{
+            outline: none;
+        }
+        input[type=text]::placeholder,
+        input[type=submit]{
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(94, 93, 93, 0.767);
+        }
+        #msg{
+            height: 20vh;
+            resize: none;
+            color: rgba(94, 93, 93, 0.767);
+        }
+        >input[type=submit]{
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-color: $red;
+            color: $red;
+            background-color: rgba(255, 255, 255, 0.534);
+            transition: all 0.25s ease-in;
+            cursor: pointer;
+        }
+        >input[type=submit]:hover{
+            border-color: transparent;
+            background-color: $red;
+            color: white;
+        }
+    }
+}
+/* -----------------------------contact section----------------------------- */
+
+
+/* -----------------------------contact section----------------------------- */
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0rem;
+    background-color: black;
+    h4,a{
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+    }
+    >h4 span{
+        color: $red;
+        font-weight: 600;
+    }
+    > div{
+        width: 3.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 0.5rem;
+        > a{
+            color: rgb(151, 150, 150);
+            font-size: 20px;
+            transition: all 0.2s ease-in;
+        }
+        > a:hover{
+            color: rgb(255, 255, 255);
+        }
+    }
+}
+/* -----------------------------contact section----------------------------- */
+
+
+/* -----------------------------Media Section----------------------------- */
+@media only screen and (max-width:680px){
+    // navbar.
+    nav{
+        position: fixed;
+        top: unset;
+        bottom: 2px;
+        border-radius: 0.5rem;
+        padding: 0rem;
+        background-color: black;
+        overflow: hidden;
+        ul{
+            width: 100%;
+        }
+        h3{
+            display: none;
+        }
+    }
+    nav.shrink{
+        background-color: black;
+    }
+    .navNames{
+        display: none;
+    }
+    .navIcons{
+        display: flex;
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.637);
+    }
+    .navIcons.clicked{
+        color: white;
+    }
+    .popularBikeSlider{
+        grid-template-columns: repeat(auto-fit, minmax(12rem, 19rem));
+    }
+
+    // info section.
+    #nonSlider{
+        font-size: 23px;
+    }
+    .slider{
+        font-size: 29px;
+    }
+
+    // popular bikes.
+    .cycle{
+        width: 19rem;
+        img{
+            max-width: 18rem;
+        }
+        .cycleContent a{
+            margin: 1rem;
+        }
+    }
+    // contacts section.
+    .contactBody{
+        form{
+            width: 90vw;
+        }
+    }
+}
+/* -----------------------------Media Section----------------------------- */

@@ -1,0 +1,902 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* -----------------------------global change----------------------------- */
+a {
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+button {
+  border: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* -----------------------------global change----------------------------- */
+/* -----------------------------Nav Bar---------------------------- */
+nav {
+  z-index: 50;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 1rem 0rem;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+nav h3 > a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  color: white;
+}
+
+nav h3 > a span {
+  color: #dc143b;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  -webkit-text-decoration: underline solid #dc143b;
+          text-decoration: underline solid #dc143b;
+}
+
+nav h3 > a span.shrink {
+  color: white;
+  -webkit-text-decoration: underline solid white;
+          text-decoration: underline solid white;
+}
+
+nav ul {
+  width: 60%;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+nav.shrink {
+  padding: 0rem;
+  background-color: #dc143b;
+}
+
+nav.shrink .navNames:hover {
+  color: #cfcece;
+}
+
+.navIcons,
+.navNames {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-decoration: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  color: white;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.navNames:hover {
+  background-color: #f30c0c;
+  background-color: #dc143b;
+}
+
+.navNames.clicked {
+  background-color: #dc143b;
+}
+
+.navIcons {
+  display: none;
+}
+
+/* -----------------------------Nav Bar---------------------------- */
+/* -----------------------------Slider section----------------------------- */
+.infoSection {
+  z-index: 1;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../images/background/bg.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.infoOver {
+  z-index: 2;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(0, 0, 0, 0.336);
+}
+
+.sliderDiv {
+  z-index: 3;
+  width: 100vw;
+  position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: uppercase;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.sliderDiv a {
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0.6rem 1.2rem;
+  border: 2.5px solid #dc143b;
+  border-radius: 0.3rem;
+  color: #dc143b;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.sliderDiv a:hover {
+  color: rgba(255, 255, 255, 0.911);
+  border-color: #ec234cb9;
+  background-color: #dc143b;
+}
+
+.slider {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.9rem;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  letter-spacing: 0.8px;
+}
+
+.slider span {
+  opacity: 0;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.slider span.fade {
+  opacity: 1;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#nonSlider {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  padding-bottom: 1.2rem;
+  text-align: center;
+}
+
+#nonSlider span {
+  color: #dc143b;
+}
+
+/* -----------------------------Slider section----------------------------- */
+/* -----------------------------category section----------------------------- */
+.category {
+  width: 100vw;
+  background: white;
+  background-image: url("../images/background/cate.jpg");
+}
+
+.category .categoryBody {
+  width: 100vw;
+  padding-top: 3rem;
+  padding-bottom: 7rem;
+  background-color: rgba(255, 247, 247, 0.075);
+}
+
+.catagoryHead {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 5rem;
+  overflow: hidden;
+}
+
+.catagoryHead h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 28px;
+  color: black;
+  line-height: 3rem;
+}
+
+.catagoryHead h5 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #dc143b;
+  text-transform: lowercase;
+}
+
+.catagoryHead h5 div {
+  width: 2rem;
+  height: 5px;
+  background-color: black;
+  border: 2px solid black;
+  margin: 0rem 0.2rem;
+  border-radius: 0.25rem;
+}
+
+.categoryBody {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.categoryBody h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 28px;
+  color: black;
+}
+
+.categoryBody .cards {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-grid-columns: (minmax(150px, 340px))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(150px, 340px));
+  grid-gap: 3%;
+}
+
+.card1,
+.card2,
+.card3 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 4rem 0rem;
+  border-radius: 7px;
+  overflow: hidden;
+  -webkit-box-shadow: 2px 3px 5px 0 #222;
+          box-shadow: 2px 3px 5px 0 #222;
+}
+
+.card1 h5, .card1 a,
+.card2 h5,
+.card2 a,
+.card3 h5,
+.card3 a {
+  padding: 0.5rem 0rem;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.card1 h5,
+.card2 h5,
+.card3 h5 {
+  font-size: 18px;
+  color: #ff0033;
+}
+
+.card1 .cardBody,
+.card2 .cardBody,
+.card3 .cardBody {
+  font-weight: 300;
+  font-size: 16px;
+  text-transform: unset;
+  color: white;
+}
+
+.card1 a,
+.card2 a,
+.card3 a {
+  font-size: 12px;
+  font-weight: 500;
+  border: 2px solid #dc143b;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: red;
+  background-color: rgba(34, 34, 34, 0.685);
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.card1 a:hover,
+.card2 a:hover,
+.card3 a:hover {
+  color: white;
+  background-color: #dc143b;
+}
+
+.card1 .hoverDiv,
+.card2 .hoverDiv,
+.card3 .hoverDiv {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 0%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.075);
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.card.hover .hoverDiv {
+  width: 100%;
+}
+
+.card1 {
+  background-image: url("../images/background/c1.jpg");
+}
+
+.card2 {
+  background-image: url("../images/background/c2.jpg");
+}
+
+.card3 {
+  background-image: url("../images/background/c3.jpg");
+}
+
+/* -----------------------------category section----------------------------- */
+/* -----------------------------popularBike section----------------------------- */
+.popularBike {
+  width: 100vw;
+  background-color: black;
+}
+
+.popularBike .popularBikeBody {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 3rem;
+  padding-bottom: 7rem;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+}
+
+.popularBikeHead {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 5rem;
+  overflow: hidden;
+}
+
+.popularBikeHead h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 28px;
+  color: white;
+  line-height: 3rem;
+}
+
+.popularBikeHead h5 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #dc143b;
+  text-transform: lowercase;
+}
+
+.popularBikeHead h5 div {
+  width: 2rem;
+  height: 5px;
+  background-color: white;
+  border: 2px solid white;
+  margin: 0rem 0.2rem;
+  border-radius: 0.25rem;
+}
+
+.popularBikeSlider {
+  width: 100vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(12rem, 21rem))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(12rem, 21rem));
+  grid-gap: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: white;
+  background-color: black;
+  overflow: hidden;
+}
+
+.cycle {
+  width: 21rem;
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.cycle img {
+  padding: 10px;
+  max-width: 20rem;
+}
+
+.cycle .cycleContent {
+  padding: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (9rem)[auto-fit];
+      grid-template-columns: repeat(auto-fit, 9rem);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cycle .cycleContent h5 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-transform: uppercase;
+  color: black;
+}
+
+.cycle .cycleContent h5 .cycleContentRate {
+  font-weight: 400;
+}
+
+.cycle .cycleContent a {
+  width: 9rem;
+  font-size: 14px;
+  font-weight: 600;
+  border: 2.5px solid #dc143b;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  color: #dc143b;
+  -webkit-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+}
+
+.cycle .cycleContent a:hover {
+  background-color: #dc143b;
+  color: white;
+}
+
+/* -----------------------------popularBike section----------------------------- */
+/* -----------------------------contact section----------------------------- */
+.contact {
+  width: 100vw;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  background-image: url("../images/background/contact.jpg");
+}
+
+.contact .contactBody {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100vw;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  background-color: rgba(255, 250, 250, 0.205);
+  padding-top: 3rem;
+  padding-bottom: 7rem;
+}
+
+.contactHead {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 3rem;
+  overflow: hidden;
+}
+
+.contactHead h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 28px;
+  color: black;
+  line-height: 3rem;
+}
+
+.contactHead h5 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #dc143b;
+  text-transform: lowercase;
+}
+
+.contactHead h5 div {
+  width: 2rem;
+  height: 5px;
+  background-color: black;
+  border: 2px solid black;
+  margin: 0rem 0.2rem;
+  border-radius: 0.25rem;
+}
+
+.contactBody form {
+  width: 40vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contactBody form > input[type=text],
+.contactBody form > input[type=submit],
+.contactBody form > textarea {
+  margin-top: 1rem;
+}
+
+.contactBody form .names,
+.contactBody form > input[type=text],
+.contactBody form > input[type=submit],
+.contactBody form > textarea {
+  width: 100%;
+}
+
+.contactBody form .names {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contactBody form .names > input[type=text] {
+  width: 48%;
+}
+
+.contactBody form input[type=text],
+.contactBody form input[type=submit],
+.contactBody form textarea {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 0.7rem 0.8rem;
+  border-radius: 0.5rem;
+  border: 1.6px solid rgba(128, 128, 128, 0.493);
+  color: rgba(26, 26, 26, 0.87);
+}
+
+.contactBody form input[type=text]:focus,
+.contactBody form input[type=submit]:focus,
+.contactBody form textarea:focus {
+  outline: none;
+}
+
+.contactBody form input[type=text]::-webkit-input-placeholder,
+.contactBody form input[type=submit] {
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(94, 93, 93, 0.767);
+}
+
+.contactBody form input[type=text]:-ms-input-placeholder,
+.contactBody form input[type=submit] {
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(94, 93, 93, 0.767);
+}
+
+.contactBody form input[type=text]::-ms-input-placeholder,
+.contactBody form input[type=submit] {
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(94, 93, 93, 0.767);
+}
+
+.contactBody form input[type=text]::placeholder,
+.contactBody form input[type=submit] {
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(94, 93, 93, 0.767);
+}
+
+.contactBody form #msg {
+  height: 20vh;
+  resize: none;
+  color: rgba(94, 93, 93, 0.767);
+}
+
+.contactBody form > input[type=submit] {
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-color: #dc143b;
+  color: #dc143b;
+  background-color: rgba(255, 255, 255, 0.534);
+  -webkit-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+  cursor: pointer;
+}
+
+.contactBody form > input[type=submit]:hover {
+  border-color: transparent;
+  background-color: #dc143b;
+  color: white;
+}
+
+/* -----------------------------contact section----------------------------- */
+/* -----------------------------contact section----------------------------- */
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 4rem 0rem;
+  background-color: black;
+}
+
+footer h4, footer a {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+footer > h4 span {
+  color: #dc143b;
+  font-weight: 600;
+}
+
+footer > div {
+  width: 3.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 0.5rem;
+}
+
+footer > div > a {
+  color: #979696;
+  font-size: 20px;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+footer > div > a:hover {
+  color: white;
+}
+
+/* -----------------------------contact section----------------------------- */
+/* -----------------------------Media Section----------------------------- */
+@media only screen and (max-width: 680px) {
+  nav {
+    position: fixed;
+    top: unset;
+    bottom: 2px;
+    border-radius: 0.5rem;
+    padding: 0rem;
+    background-color: black;
+    overflow: hidden;
+  }
+  nav ul {
+    width: 100%;
+  }
+  nav h3 {
+    display: none;
+  }
+  nav.shrink {
+    background-color: black;
+  }
+  .navNames {
+    display: none;
+  }
+  .navIcons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.637);
+  }
+  .navIcons.clicked {
+    color: white;
+  }
+  .popularBikeSlider {
+    -ms-grid-columns: (minmax(12rem, 19rem))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(12rem, 19rem));
+  }
+  #nonSlider {
+    font-size: 23px;
+  }
+  .slider {
+    font-size: 29px;
+  }
+  .cycle {
+    width: 19rem;
+  }
+  .cycle img {
+    max-width: 18rem;
+  }
+  .cycle .cycleContent a {
+    margin: 1rem;
+  }
+  .contactBody form {
+    width: 90vw;
+  }
+}
+
+/* -----------------------------Media Section----------------------------- */
+/*# sourceMappingURL=home.css.map */
