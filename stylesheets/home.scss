@@ -2,6 +2,27 @@
 $red: #dc143b;
 $black: #111111;
 
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #dadada;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #dc143c;
+    border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #dc143b; 
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -46,7 +67,7 @@ nav{
     padding: 1rem 0rem;
     transition: 0.25s;
     h3 > a{
-        font-family: "Montserrat", sans-serif;
+        font-family: 'Lobster', cursive;
         font-size: 22px;
         font-weight: 800;
         letter-spacing: 0.7px;
@@ -69,13 +90,24 @@ nav{
         align-items: center;
         padding: 0.5rem 1rem;
     }
+    .cartCount{
+        background-color: $red;
+        color: white;
+        padding: 0.1rem; 
+        border-radius: 0.2rem; 
+        margin-left: 0.1rem;
+        transition: all 0.2s;
+    }
 }
 nav.shrink{
     padding: 0rem;
-    // background-color: #0f0f0f;
     background-color: $red;
     .navNames:hover{
-        color: rgb(207, 206, 206);
+        color: rgb(255, 253, 253);
+    }
+    .cartCount{
+        background-color: white; 
+        color: #dc143b; 
     }
 }
 .navIcons,
@@ -102,6 +134,7 @@ nav.shrink{
 .navIcons{
     display: none;
 }
+
 /* -----------------------------Nav Bar---------------------------- */
 
 
@@ -601,6 +634,7 @@ footer{
     nav.shrink{
         background-color: black;
     }
+    #contactLi,
     .navNames{
         display: none;
     }
