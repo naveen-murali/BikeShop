@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/adminAddProduct.css">
+</head>
+
+<body>
+
+    <h4><span></span>admin add product<span></span></h4>
+
+    <form action="#">
+        <label for="productName">
+            product name
+            <input type="text" name="name" placeholder="product name">
+        </label>
+        <label for="catagory">
+            catagory
+            <input type="text" name="sname" placeholder="catagory">
+        </label>
+        <label for="productPrice">
+            price
+            <input type="number" name="productPrice" placeholder="price">
+        </label>
+        <label for="productDiscription">
+            discription
+            <textarea type="text" name="productDiscription"
+                onfocus="(this.textContent='', this.style.color='#222')">discription</textarea>
+        </label>
+        <label for="imgDiv">
+            product image
+            <div class="imgPreview"></div>
+            <input type="file" name="adminProductImg">
+        </label>
+
+        <input type="submit" value="add product">
+    </form>
+
+    <section class="notification added">
+        <h5>added</h5>
+        <img src="images/bik1.jpg" alt="bik1">
+        <div class="details">
+            <h5 >product name name name</h5>
+            <h6>$10000</h6>
+        </div>
+    </section>
+
+    <script>
+        let notification = document.querySelector(".notification");
+    
+        function clicked(){
+            notification.classList.add("added");
+        }
+    
+    </script>
+</body>
+
+
+</html>

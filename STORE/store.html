@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <script src="https://kit.fontawesome.com/15d70f3266.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/home.css">
+    <link rel="stylesheet" href="stylesheets/cart.css">
+    <link rel="stylesheet" href="stylesheets/bicycles.css">
+</head>
+
+<body>
+    <!----------------------- nav bar ----------------------->
+    <nav class="shrink">
+        <h3><a href="/index.html">Bike<span class="shrink">Shop.</span></a></h3>
+        <ul>
+            <li>
+                <span>
+                    <a href="/index.html" class="navIcons">
+                        <i class="fas fa-home"></i>
+                    </a>
+                </span>
+                <span>
+                    <a href="/index.html" class="navNames">Home</a>
+                </span>
+            </li>
+            <li>
+                <span>
+                    <a href="/store.html" class="navIcons clicked">
+                        <i class="fas fa-globe-asia"></i>
+                    </a>
+                </span>
+                <span>
+                    <a href="/store.html" class="navNames clicked">Store</a>
+                </span>
+            </li>
+            <li>
+                <span>
+                    <a href="/cart.html" class="navIcons cartIcon">
+                        <i class="fas fa-shopping-cart"></i><sup class="cartCount1">10</sup>
+                    </a>
+                </span>
+                <span>
+                    <a href="/cart.html" class="navNames">Cart <sup class="cartCount2">10</sup></a>
+                </span>
+            </li>
+            <li>
+                <span>
+                    <a href="/loging.html" class="navIcons">
+                        <i class="fas fa-user-circle"></i>
+                    </a>
+                </span>
+                <span>
+                    <a href="/loging.html" class="navNames">Profile</a>
+                </span>
+            </li>
+            <li id="contactLi">
+                <span>
+                    <a href="/home.html#contact" class="navNames">ContactUs</a>
+                </span>
+            </li>
+        </ul>
+    </nav>
+    <!----------------------- nav bar ----------------------->
+
+    <!--------------------- store section --------------------->
+    <!-- search, filter, sort -->
+    <section class="store empty">
+        <div class="storeSearch">
+            <form action="#">
+                <input type="search" name="storeSearch" placeholder="Search">
+                <button><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+        <div class="notMain">
+            <div class="notImg">
+                <img src="images/notFound.png" alt="">
+                <i class="fas fa-exclamation-circle notIcon"></i>
+            </div>
+            <div class="notFound">
+                <h3>Sorry, no results found!</h3>
+                <p>Please check the spelling or try searching for something else</p>
+            </div>
+        </div>
+
+        <div class="filterBtn">
+            <button class="mainFilterBtn">filter</button>
+        </div>
+
+        <div class="store-filter">
+            <h3>
+                <div></div>Filter<div></div>
+            </h3>
+
+            <form action="#" name="filter">
+                <div class="filter-category">
+                    <h4>categorys</h4>
+                    <div>
+                        <input type="checkbox" name="filterCategory-mBike" id="">
+                        <label for="filterCategory-mBike">mountain bike</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="filterCategory-ssBike" id="">
+                        <label for="filterCategory-ssBike">single speed bikes</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="filterCategory-rBike" id="">
+                        <label for="filterCategory-rBike">road bikes</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="filterCategory-parts" id="">
+                        <label for="filterCategory-parts">bike parts</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="filterCategory-acc" id="">
+                        <label for="filterCategory-acc">accessories</label>
+                    </div>
+                </div>
+                <div class="rangeCont">
+                    <label for="priceRange">
+                        <h4>Price</h4>
+                    </label>
+                    <input type="range" name="priceRange" min="0" max="500" value="500" step="10" class="priceRange"
+                        id="priceRange">
+                    <div>
+                        <h5>Up To</h5>
+                        <h3 class="liveCount"></h3>
+                    </div>
+                </div>
+                <div class="filter-category">
+                    <h4>Sort By</h4>
+                    <div>
+                        <input type="radio" name="sortBy">
+                        <label for="sortBy">name [a - z]</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="sortBy">
+                        <label for="sortBy">name [z - a]</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="sortBy">
+                        <label for="sortBy">price [high - low]</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="sortBy">
+                        <label for="sortBy">price [low - high]</label>
+                    </div>
+                </div>
+                <div class="subBtn">
+                    <input type="submit" value="filter" class="submitBtn">
+                </div>
+            </form>
+        </div>
+
+        <div class="storeBody">
+            <div class="storeCard">
+                <a href="#" class="storeCardImg">
+                    <img src="/images/bik1.jpg" alt="">
+                </a>
+                <div class="storeCardBody">
+                    <div class="nameNprice">
+                        <h3>name</h3>
+                    </div>
+                    <div class="addToCartBtn">
+                        <h4>$300</h4>
+                        <a href="#">add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="storeCard">
+                <a href="#" class="storeCardImg">
+                    <img src="/images/bik2.jpg" alt="">
+                </a>
+                <div class="storeCardBody">
+                    <div class="nameNprice">
+                        <h3>name</h3>
+                    </div>
+                    <div class="addToCartBtn">
+                        <h4>$300</h4>
+                        <a href="#">add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="storeCard">
+                <a href="#" class="storeCardImg">
+                    <img src="/images/bik3.jpg" alt="">
+                </a>
+                <div class="storeCardBody">
+                    <div class="nameNprice">
+                        <h3>name</h3>
+                    </div>
+                    <div class="addToCartBtn">
+                        <h4>$300</h4>
+                        <a href="#">add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="storeCard">
+                <a href="#" class="storeCardImg">
+                    <img src="/images/bik4.jpg" alt="">
+                </a>
+                <div class="storeCardBody">
+                    <div class="nameNprice">
+                        <h3>name</h3>
+                    </div>
+                    <div class="addToCartBtn">
+                        <h4>$300</h4>
+                        <a href="#">add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="storeCard">
+                <a href="#" class="storeCardImg">
+                    <img src="/images/bik5.jpg" alt="">
+                </a>
+                <div class="storeCardBody">
+                    <div class="nameNprice">
+                        <h3>name</h3>
+                    </div>
+                    <div class="addToCartBtn">
+                        <h4>$300</h4>
+                        <a href="#">add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="storeCard">
+                <a href="#" class="storeCardImg">
+                    <img src="/images/bik6.jpg" alt="">
+                </a>
+                <div class="storeCardBody">
+                    <div class="nameNprice">
+                        <h3>name</h3>
+                    </div>
+                    <div class="addToCartBtn">
+                        <h4>$300</h4>
+                        <a href="#">add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="storeCard">
+                <a href="#" class="storeCardImg">
+                    <img src="/images/r1.jpg" alt="">
+                </a>
+                <div class="storeCardBody">
+                    <div class="nameNprice">
+                        <h3>name</h3>
+                    </div>
+                    <div class="addToCartBtn">
+                        <h4>$300</h4>
+                        <a href="#">add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="storeCard">
+                <a href="#" class="storeCardImg">
+                    <img src="/images/r2.jpg" alt="">
+                </a>
+                <div class="storeCardBody">
+                    <div class="nameNprice">
+                        <h3>name</h3>
+                    </div>
+                    <div class="addToCartBtn">
+                        <h4>$300</h4>
+                        <a href="#">add to cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--------------------- store section --------------------->
+
+    <!--------------------- footer section --------------------->
+    <footer>
+        <h4>Created By <span>NaveenMurali</span> | 2020 All rights reserved.</h4>
+        <div>
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-square"></i></a>
+            <a href="https:/instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+    <!--------------------- footer section --------------------->
+
+
+    <!-- <script src="javascripts/home.js"></script>
+    <script src="javascripts/cart.js"></script> -->
+    <script src="javascripts/bicycles.js"></script>
+</body>
+
+</html>

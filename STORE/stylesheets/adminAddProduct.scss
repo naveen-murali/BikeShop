@@ -1,0 +1,160 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: "Montserrat", sans-serif;
+    color: #222;
+    background-color: rgba(255, 0, 0, 0.822);
+    overflow: hidden;
+
+    h4{
+        padding: 1rem;
+        font-size: 24px;
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+        // color: #dc143b;
+        display: inline-flex;
+        align-items: center;
+
+        span{
+            width: 2rem;
+            height: 0.3rem;
+            border-radius: 1rem;
+            background-color: white;
+            margin: 0rem 0.5rem;
+        }
+    }
+
+    form{
+        width: 40%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        border-radius: 1rem;
+        background-color: rgba(192, 192, 192, 0.473);
+        box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.5);
+
+        label{
+            width: 100%;
+            font-weight: 500;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 1rem;
+            text-transform: capitalize;
+
+
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            input[type=number] {
+                -moz-appearance: textfield;
+            }
+
+            input[type=text],
+            input[type=number],
+            textarea{
+                max-width: 100%;
+                min-width: 100%;
+                font-family: "Montserrat", sans-serif;
+                font-size: 16px;
+                font-weight: 500;
+                letter-spacing: 0.5px;
+                padding: 0.7rem;
+                margin-top: 0.4rem;
+                text-transform: capitalize;
+                border: 1px solid #333;
+                border-radius: 0.5rem;
+                color: #222;
+            }
+            textarea{
+                min-height: 10rem;
+                color: rgb(112, 112, 112);
+            }
+            textarea:focus,
+            input:focus{
+                outline: none;
+            }
+        }
+        input[type=submit]{
+            text-transform: uppercase;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 700;
+            border: 2.5px solid #dc143b;
+            border-radius: 0.4rem;
+            align-self: flex-end;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            color: #dc143b;
+            background-color: white;
+            transition: 0.2s;
+        }
+        input[type=submit]:focus{
+            outline: none;
+        }
+        input[type=submit]:hover{
+            color: white;
+            background-color: #dc143b;
+        }    
+    }
+    .notification{
+        z-index: -1;
+        position: absolute;
+        top: 4rem;
+        right: 2rem;
+        display: flex;
+        padding: 0.5rem;
+        border-radius: 0.3rem;
+        font-family: "Montserrat", sans-serif;
+        transform: translateX(40vw);
+        color: #fff;
+        background-color: rgba(128, 128, 128, 0.849);
+        transition: 0.2s;
+        h5{
+            font-family: "Lobster", sans-serif;
+            letter-spacing: 1px;
+            font-size: 16px;
+            align-self: center;
+            transform: rotate(-90deg);
+            text-transform: uppercase;
+        }
+        img{
+            width: 150px;
+            padding-right: 0.5rem;
+        }
+        .details{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            h5{
+                font-family: "Montserrat", sans-serif;
+                text-transform: capitalize;
+                letter-spacing: 0.5px;
+                transform: rotate(0deg);
+            }
+            h6{
+                font-size: 14px;
+                letter-spacing: 1px;
+            }
+        }
+    }
+    .notification.added{
+        z-index: 3;
+        opacity: 1;
+        pointer-events: all;
+        transform: translate(0px);
+    }
+}
